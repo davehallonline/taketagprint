@@ -1,22 +1,22 @@
 const express = require('express');
 const morgan = require('morgan');
-//const helmet = require('helmet');
-//const cors = require("cors");
+const helmet = require('helmet');
+const cors = require("cors");
 require('dotenv').config();
 
 const passport = require('passport');
 const InstagramStrategy = require('passport-instagram').Strategy;
 
 const middlewares = require("./middlewares");
-//const { xssFilter } = require('helmet');
+const { xssFilter } = require('helmet');
 const { serializeUser } = require('passport');
 
 const app = express();
 app.use(morgan('common'));
-//app.use(helmet());
-//app.use(cors({
-//    origin: 'https://taketagprint.heroku.com'
-//}));
+app.use(helmet());
+app.use(cors({
+    origin: 'https://taketagprint.heroku.com'
+}));
 
 passport.serializeUser(function(user, done){
     done(null, user);
@@ -89,7 +89,7 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/login')
   }
 
-// const port = process.env.PORT || 1337;
-// app.listen(port, () => {
-//     console.log(`Listening on port ${port}`)
-// })
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+})
