@@ -8,7 +8,7 @@ const passport = require('passport');
 const InstagramStrategy = require('passport-instagram').Strategy;
 
 const middlewares = require("./middlewares");
-const { xssFilter } = require('helmet');
+//const { xssFilter } = require('helmet');
 const { serializeUser } = require('passport');
 
 const app = express();
