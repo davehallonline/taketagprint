@@ -29,7 +29,7 @@ passport.deserializeUser(function(obj, done){
 passport.use(new InstagramStrategy({
     clientID: process.env.INSTAGRAM_CLIENT_ID,
     clientSecret: process.env.INSTAGRAM_CLIENT_SECRET,
-    callbackURL: 'https://taketagprint.heroku.com/auth/instagram/callback'
+    callbackURL: 'https://taketagprint.herokuapp.com/auth/instagram/callback'
 },
 function(accessToken, refreshToken, profile, done){
     User.findOrCreate({ instagramId: profile.id }, function(err, user) {
