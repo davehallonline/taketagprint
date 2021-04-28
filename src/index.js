@@ -5,7 +5,8 @@ const cors = require("cors");
 require('dotenv').config();
 
 const passport = require('passport');
-const InstagramStrategy = require('passport-instagram').Strategy;
+//const InstagramStrategy = require('passport-instagram').Strategy;
+const InstagramStrategy = require('./passport-strategies/instagram-strategy').Strategy;
 
 const middlewares = require("./middlewares");
 const { xssFilter } = require('helmet');
