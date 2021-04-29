@@ -57,7 +57,8 @@ function(accessToken, refreshToken, profile, done){
 
 
 app.get('/', function(req, res){
-    res.render('index', { user: req.user });
+    //res.render('index', { user: req.user });
+    res.render('index');
   });
   
   app.get('/account', ensureAuthenticated, function(req, res){
