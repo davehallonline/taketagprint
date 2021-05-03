@@ -46,7 +46,7 @@ function(accessToken, refreshToken, profile, done){
     //app.use(express.cookieParser());
     //app.use(express.bodyParser());
     //app.use(express.methodOverride());
-    app.use(express.session({ secret: 'keyboard cat' }));
+    //app.use(express.session({ secret: 'keyboard cat' }));
     // Initialize Passport!  Also use passport.session() middleware, to support
     // persistent login sessions (recommended).
      app.use(passport.initialize());
