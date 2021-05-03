@@ -42,7 +42,7 @@ function(accessToken, refreshToken, profile, done){
 //app.configure(function() {
     app.set('views', __dirname + '/views');
     app.set('view engine', 'ejs');
-    app.use(express.logger());
+    //app.use(express.logger());
     app.use(express.cookieParser());
     app.use(express.bodyParser());
     app.use(express.methodOverride());
@@ -51,8 +51,8 @@ function(accessToken, refreshToken, profile, done){
     // persistent login sessions (recommended).
      app.use(passport.initialize());
      app.use(passport.session());
-     app.use(app.router);
-     app.use(express.static(__dirname + '/public'));
+     //app.use(app.router);
+     //app.use(express.static(__dirname + '/public'));
   //});
 
 
