@@ -20,11 +20,14 @@ app.use(cors({
 }));
 
 passport.serializeUser(function(user, done){
+    console.log('Serialize user called.');
     done(null, user);
 });
 
 passport.deserializeUser(function(obj, done){
-    done(null, obj);
+    console.log('Deserialize user called.');
+    return done(null, { firstName: 'Foo', lastName: 'Bar' });
+    //done(null, obj);
 });
 
 passport.use(new InstagramStrategy({
