@@ -36,9 +36,10 @@ passport.use(new InstagramStrategy({
     callbackURL: 'https://taketagprint.herokuapp.com/auth/instagram/callback'
 },
 function(accessToken, refreshToken, profile, done){
-    User.findOrCreate({ instagramId: profile.id }, function(err, user) {
-        return done(err, user);
-    });
+    //User.findOrCreate({ instagramId: profile.id }, function(err, user) {
+    //    return done(err, user);
+    //});
+    done(null, profile)
 }
 ));
 
