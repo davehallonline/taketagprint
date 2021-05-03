@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require("cors");
@@ -51,7 +52,7 @@ function(accessToken, refreshToken, profile, done){
     //app.use(express.cookieParser());
     //app.use(express.bodyParser());
     //app.use(express.methodOverride());
-    //app.use(express.session({ secret: 'keyboard cat' }));
+    app.use(express.session({ secret: 'keyboard cat' }));
     // Initialize Passport!  Also use passport.session() middleware, to support
     // persistent login sessions (recommended).
      app.use(passport.initialize());
